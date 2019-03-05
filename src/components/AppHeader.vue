@@ -21,8 +21,8 @@
       <ul class="header__links">
         <li class="header__link"><a href="#">Sign UP</a></li>
         <li class="header__link"><a href="#">Account</a></li>
-        <li class="header__link"><a href="#">Help</a></li>
-        <li class="header__link"><a href="#">Cart <span class="icon-shopping-cart"></span></a></li>
+        <li class="header__link"><a href="#">Help<span class="icon-keyboard_arrow_down"></span></a></li>
+        <li class="header__link header__link-cart"><a href="#"><span class="icon-shopping-cart"></span></a></li>
       </ul>
     </nav>
   </div>
@@ -70,6 +70,7 @@ a {
 .header__links {
   display: flex;
   flex-grow: 1;
+  align-items: center;
 }
 .header__catalog-links {
   display: flex;
@@ -96,23 +97,13 @@ a {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 20px 0;
-  line-height: 0;
+  padding: 10px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: border-color ease 0.3s;
 }
-.header__catalog-link a::after,
-.header__link a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: calc(100% - 8px);
-  height: 3px;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color ease 0.3s;
-}
-.header__catalog-link a:hover::after,
-.header__link a:hover::after {
-  background-color: rgb(0, 0, 0);
+.header__catalog-link a:hover,
+.header__link a:hover {
+  border-color: rgb(0, 0, 0);
 }
 .icon-keyboard_arrow_down {
   margin-left: 6px;
@@ -121,5 +112,9 @@ a {
 }
 .header__link {
   margin-left: 4%;
+}
+.icon-shopping-cart {
+  font-size: 30px;
+  padding: 5px 0;
 }
 </style>
