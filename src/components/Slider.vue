@@ -13,6 +13,7 @@
 
     <div class="controls">
       <span class="dot"
+        :class="{ active: slideActive === index }"
         v-for="(slide, index) in slides"
         :key="slide.id"
         @click="dotClick(index)"></span>
@@ -62,11 +63,11 @@ export default {
     dotClick: function (index) {
       clearInterval(this.interval);
       this.activateSlide(index);
-      this.interval = setInterval(this.nextSlide, 3000);
+      this.interval = setInterval(this.nextSlide, 10000);
     }
   },
   created () {
-    this.interval = setInterval(this.nextSlide, 3000)
+    this.interval = setInterval(this.nextSlide, 10000)
   }
 };
 </script>
@@ -76,8 +77,15 @@ export default {
   position: relative;
   /* background: url('../assets/pic1.png'); */
 }
+.slide {
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.5;
+  transition: opacity ease 2s;
+}
 .slide.active {
-  padding: 100px 20px;
+  opacity: 1;
+  padding: 45vh 45vw;
 }
 
 .slider-text {
@@ -98,9 +106,10 @@ export default {
   display: block;
   width: 10px;
   height: 10px;
-  background: #fff;
+  background: transparent;
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 100%;
-  margin: 20px 0;
+  margin: 10px 0;
   cursor: pointer;
   position: relative;
   transition: all ease .3s;
@@ -115,7 +124,7 @@ export default {
   height: 25px;
 }
 .dot.active {
-  background: red;
+  background: rgba(255, 255, 255, 0.9);
 }
 .title {
   color: #fff;
