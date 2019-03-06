@@ -19,6 +19,17 @@
         @click="dotClick(index)"></span>
     </div>
 
+    <div class="slider__title">
+      <h2>Comfort that<br>comes naturally</h2>
+    </div>
+
+    <div class="slider__links">
+      <ul>
+        <li><a href="#" class="slider__link">Shop men</a></li>
+        <li><a href="#" class="slider__link">shop women</a></li>
+      </ul>
+    </div>
+
     {{ message }}
   </div>
 </template>
@@ -129,5 +140,52 @@ export default {
 .title {
   color: #fff;
   padding: 100px 20px;
+}
+.slider__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%) skew(0, -4deg);
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 8px;
+  line-height: 1.5;
+}
+.slider__links {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.slider__link {
+  margin: 75px;
+  padding-bottom: 15px;
+  position: relative;
+}
+.slider__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 230px / 2);
+  width: 230px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: all ease 0.3s;
+}
+.slider__link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__title {
+    font-size: 35px;
+  }
 }
 </style>

@@ -101,6 +101,9 @@ a {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: border-color ease 0.3s;
 }
+.header__link-cart a {
+  padding: 5px 0;
+}
 .header__catalog-link a:hover,
 .header__link a:hover {
   border-color: rgb(0, 0, 0);
@@ -115,6 +118,5 @@ a {
 }
 .icon-shopping-cart {
   font-size: 30px;
-  padding: 5px 0;
 }
 </style>
