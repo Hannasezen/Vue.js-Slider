@@ -30,7 +30,6 @@
       </ul>
     </div>
 
-    {{ message }}
   </div>
 </template>
 
@@ -39,10 +38,7 @@ export default {
   name: "slider",
   data() {
     return {
-        message: 'Hello',
-        sliderAllCount: 0,
         slideActive: 0,
-        slideCurrent: 0,
         interval: null,
         slides: [
         { id: 1,
@@ -86,7 +82,6 @@ export default {
 <style scoped>
 .slider {
   position: relative;
-  /* background: url('../assets/pic1.png'); */
 }
 .slide {
   background-size: cover;
@@ -112,6 +107,7 @@ export default {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  z-index: 10;
 }
 .dot {
   display: block;
